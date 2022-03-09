@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+
+    <h1>Practice - JS Basics - Fundamentals part 3</h1>
+    <h2>Foundations | The Odin Project <a href="https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/fundamentals-part-3#practice" target="_blank">(link)</a></h2>
+    <br>
+    <h2>Instructions:</h2>
+    <ol>
+        <li>Write a function called add7 that takes one number and returns that number + 7.</li>
+        <li>Write a function called multiply that takes 2 numbers and returns their product.</li>
+        <li>Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.</li>
+        <li>Write a function called lastLetter that takes a string and returns the very last letter of that string: 
+            <ol>
+                <li>
+                    lastLetter("abcd") should return "d"
+                </li>
+            </ol>
+        </li>
+    </ol>
+
+    <h2>Output:</h2>
+
+    <section>
+
+    </section>
+
+    <script>
+        const para1 = document.createElement('p');
+        const para2 = document.createElement('p');
+        const para3 = document.createElement('p');
+        const para4 = document.createElement('p');
+
+
+        function add7(a){           //Write a function called add7 that takes one number and returns that number + 7.
+            return a += 7;
+            }
+
+        function multiply(a, b){    //Write a function called multiply that takes 2 numbers and returns their product.
+            return a * b;
+        }
+
+        function capitalize(c){     //Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+            let lowCase = c.toLowerCase();
+            let firsLetter = lowCase.substr(0, 1);
+            let capitalized = lowCase.replace(firsLetter, firsLetter.toUpperCase());
+            return capitalized;
+        }
+
+        function lastLetter(d){     //Write a function called lastLetter that takes a string and returns the very last letter of that string:
+            let lastChar = d.substr(-1,1);
+            return lastChar;
+        }
+
+        let num1 = parseFloat(prompt('Enter first number:'));
+        para1.textContent = `1. Your fist number is ${num1}. ${num1} + 7 = ${add7(num1)}`;
+
+        let num2 = parseFloat(prompt('Enter second number:'));
+        para2.textContent = `2. Your second number is ${num2}. ${num1} x ${num2} = ${multiply(num1, num2)}`;
+
+        let word = prompt('Enter a word - or just random letters:');
+        para3.textContent = `3. Your word is ${word}. Capitalized word is: ${capitalize(word)}.`;
+        para4.textContent = `4. The last letter of your word is ${lastLetter(word)}.`;
+
+        const section = document.querySelector('section');
+        section.appendChild(para1);
+        section.appendChild(para2);
+        section.appendChild(para3);
+        section.appendChild(para4);
+
+    </script>
+    
+    
+</body>
+</html>
